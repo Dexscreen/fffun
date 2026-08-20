@@ -1,0 +1,22 @@
+# FixedFloat Order Routing
+RewriteEngine On
+
+# Landing page is served at /en (canonical). No redirect — the root also
+# serves the page, and the canonical tag points search engines at /en.
+RewriteRule ^en/?$ index.html [L,QSA]
+
+# Route /order/ID to /order.html?id=ID
+RewriteRule ^order/([^/]+)$ order.html?id=$1 [L,QSA]
+
+# Route /orders to /orders.html
+RewriteRule ^orders$ orders.html [L,QSA]
+
+# Route /user/orders to /orders.html (common path)
+RewriteRule ^user/orders$ orders.html [L,QSA]
+
+# Block direct access to sensitive paths
+RedirectMatch 403 ^/data/?$
+RedirectMatch 403 ^/js/?$
+
+# Default charset
+AddDefaultCharset UTF-8
