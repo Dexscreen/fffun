@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/en", "destination": "/index.html" },
+    { "source": "/en/", "destination": "/index.html" },
+    { "source": "/order/:id", "destination": "/order.html?id=:id" },
+    { "source": "/orders", "destination": "/orders.html" },
+    { "source": "/user/orders", "destination": "/orders.html" }
+  ]
+}
